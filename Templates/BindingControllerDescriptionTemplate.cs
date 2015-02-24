@@ -18,10 +18,26 @@ namespace BindingControllerRegistrator.Templates
 
             if (moduleList.Count > 1)
             {
+                var allertButtons = new AlertButton[moduleList.Count];
+
+                foreach (var module in moduleList) {
+                    allertButtons [moduleList.IndexOf (module)] = new AlertButton (module.ProjectVirtualPath.FileNameWithoutExtension);
+                }
+
+                var chosedButton = MessageService.AskQuestion(
+                    "Регистрация контроллера", 
+                    "Было найдено несколько модулей. Выберите тот, в котором необходимо зарегистрировать контроллер",
+                    allertButtons
+                );
+
+                RegisterControllerInModule (moduleList.FirstOrDefault (module => module.ProjectVirtualPath.FileNameWithoutExtension == chosedButton.Label), tags ["FullName"]);
+            }
+            else if (moduleList.Count == 1)
+                RegisterControllerInModule (moduleList [0], tags["FullName"]);
+            else
+            {
 
             }
-            else
-                RegisterControllerInModule (moduleList [0], tags["FullName"]);
 
             return temp;
         }
