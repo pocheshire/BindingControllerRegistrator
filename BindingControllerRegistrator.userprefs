@@ -1,10 +1,10 @@
 ﻿<Properties StartupItem="BindingControllerRegistrator.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Templates/BindingController.xml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Templates/BindingControllerDescriptionTemplate.cs">
     <Files>
       <File FileName="Properties/Manifest.addin.xml" Line="18" Column="18" />
-      <File FileName="Templates/BindingController.xml" Line="22" Column="22" />
-      <File FileName="Templates/BindingControllerDescriptionTemplate.cs" Line="13" Column="13" />
+      <File FileName="Templates/BindingController.xml" Line="10" Column="10" />
+      <File FileName="Templates/BindingControllerDescriptionTemplate.cs" Line="17" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

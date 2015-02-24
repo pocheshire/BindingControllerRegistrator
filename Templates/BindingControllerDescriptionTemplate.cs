@@ -14,7 +14,7 @@ namespace BindingControllerRegistrator.Templates
             var temp = base.CreateContent (project, tags, language);
 
             var projectFilesCollection = project.Files;
-            var moduleList = projectFilesCollection.Where (file => file.Name.ToLowerInvariant().Contains ("module")).ToList();
+            var moduleList = projectFilesCollection.Where (file => file.Name.ToLowerInvariant().Contains ("module") ).ToList();
 
             if (moduleList.Count > 1)
             {
