@@ -54,8 +54,7 @@ namespace BindingControllerRegistrator.Templates
                 }
             }
 
-            textEditorData.Insert (line.Offset, string.Format("batch.RegisterController(() => new {0}();\n", fullName));
-            textEditorData.FormatString (line.Offset, string.Format("batch.RegisterController(() => new {0}();\n", fullName));
+            textEditorData.Insert (line.Offset, string.Format("\t\t\tbatch.RegisterController(() => new {0}());\n", fullName));
 
             document.Save ();
             document.Close ();
