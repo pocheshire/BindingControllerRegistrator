@@ -3,6 +3,7 @@ using MonoDevelop.Ide.Templates;
 using System.Collections.Generic;
 using System.Linq;
 using MonoDevelop.Ide;
+using Mono.TextEditor;
 
 namespace BindingControllerRegistrator.Templates
 {
@@ -27,8 +28,37 @@ namespace BindingControllerRegistrator.Templates
 
         private void RegisterControllerInModule (MonoDevelop.Projects.ProjectFile projectFile, string fullName)
         {
-            var moduleDocument = IdeApp.Workbench.GetDocument (projectFile.Name);
+            var document = IdeApp.Workbench.OpenDocument(projectFile.FilePath, projectFile.Project, false);
+            var textEditorData = document.GetContent<ITextEditorDataProvider> ().GetTextEditorData ();
 
+            DocumentLine line = textEditorData.GetLine (textEditorData.Lines.Count () - 2);
+            for (int i = 1; i < textEditorData.Lines.Count(); i++) {
+                var lineText = textEditorData.GetLineText (i);
+
+                if (lineText.ToLowerInvariant().Contains("registerservices"))
+                {
+                    int j = 1;
+                    i++;
+                    while (j != 0)
+                    {
+                        i++;
+                        lineText = textEditorData.GetLineText (i);
+
+                        if (lineText.Contains ("}"))
+                            j--;
+                        else if (lineText.Contains ("{"))
+                            j++;
+                    }
+                    line = textEditorData.GetLine (i);
+                    break;
+                }
+            }
+
+            textEditorData.Insert (line.Offset, string.Format("batch.RegisterController(() => new {0}();\n", fullName));
+            textEditorData.FormatString (line.Offset, string.Format("batch.RegisterController(() => new {0}();\n", fullName));
+
+            document.Save ();
+            document.Close ();
         }
     }
 }

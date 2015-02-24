@@ -14,11 +14,14 @@
         <BindingController DefaultExtension=".cs" DefaultName="BindingController.cs">
 <![CDATA[using EnCore.Presentation;
 
-public class ${Name} : BindingController<VIEW, FRAME>
+namespace ${Namespace}
 {
-    public override void Bind()
+    public class ${Name} : BindingController<VIEW, FRAME>
     {
-        //TODO: implement
+        public override void Bind()
+        {
+            //TODO: implement
+        }
     }
 }
 ]]></BindingController>
