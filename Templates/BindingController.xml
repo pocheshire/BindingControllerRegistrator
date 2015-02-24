@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Template
+    Originator="Maxim Evtukh"
+    Language="C#">
+
+    <TemplateConfiguration>
+        <_Name>Empty BindingController</_Name>
+        <_Category>General</_Category>
+        <LanguageName>C#</LanguageName>
+        <_Description>Creates a new BindingController</_Description>
+    </TemplateConfiguration>
+
+    <TemplateFiles>
+        <BindingController DefaultExtension=".cs" DefaultName="BindingController.cs">
+<![CDATA[using EnCore.Presentation;
+
+public class ${Name} : BindingController<VIEW, FRAME>
+{
+    public override void Bind()
+    {
+        //TODO: implement
+    }
+}
+]]></BindingController>
+    </TemplateFiles>
+</Template>

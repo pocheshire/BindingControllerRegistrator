@@ -1,12 +1,16 @@
 ﻿<Properties StartupItem="BindingControllerRegistrator.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Properties/Manifest.addin.xml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Templates/BindingControllerDescriptionTemplate.cs">
     <Files>
-      <File FileName="Properties/Manifest.addin.xml" Line="5" Column="5" />
+      <File FileName="Properties/Manifest.addin.xml" Line="120" Column="120" />
+      <File FileName="Templates/BindingController.xml" Line="10" Column="10" />
+      <File FileName="Templates/BindingControllerDescriptionTemplate.cs" Line="13" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/maksimevtuh/Projects/BindingControllerRegistrator/Templates/BindingControllerDescriptionTemplate.cs" line="32" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
