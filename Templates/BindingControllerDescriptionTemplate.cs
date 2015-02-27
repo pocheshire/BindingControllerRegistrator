@@ -14,7 +14,10 @@ namespace BindingControllerRegistrator.Templates
             var temp = base.CreateContent (project, tags, language);
 
             var projectFilesCollection = project.Files;
-            var moduleList = projectFilesCollection.Where (file => file.Name.ToLowerInvariant().Contains ("module") ).ToList();
+            var moduleList = projectFilesCollection
+                .Where(file => file.ProjectVirtualPath.ToString() == file.ProjectVirtualPath.FileName)
+                .Where (file => file.Name.ToLowerInvariant().Contains ("module"))
+                .ToList();
 
             if (moduleList.Count > 1)
             {
@@ -36,7 +39,10 @@ namespace BindingControllerRegistrator.Templates
                 RegisterControllerInModule (moduleList [0], tags["FullName"]);
             else
             {
-
+                MessageService.ShowError (
+                    "Ошибка регистрации контроллера!", 
+                    "Не найдено ни одного модуля, в который возможно зарегистрировать контроллер. Убедитесь, что модуль находится в корне проекта и содержит в названии Module"
+                );
             }
 
             return temp;
@@ -70,7 +76,7 @@ namespace BindingControllerRegistrator.Templates
                 }
             }
 
-            textEditorData.Insert (line.Offset, string.Format("\t\t\tbatch.RegisterController(() => new {0}());\n", fullName));
+            textEditorData.Insert (line.Offset, string.Format("\t\t\tbatch.RegisterController (() => new {0}());\n", fullName));
 
             document.Save ();
             document.Close ();
