@@ -1,10 +1,12 @@
-﻿<Properties StartupItem="BindingControllerRegistrator.csproj">
+﻿<Properties StartupItem="BindingControllerRegistrator.csproj" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Templates/BindingControllerDescriptionTemplate.cs">
     <Files>
-      <File FileName="Properties/Manifest.addin.xml" Line="1" Column="1" />
-      <File FileName="Templates/BindingController.xml" Line="1" Column="1" />
-      <File FileName="Templates/BindingControllerDescriptionTemplate.cs" Line="6" Column="6" />
+      <File FileName="Templates/BindingControllerDescriptionTemplate.cs" Line="59" Column="1" />
+      <File FileName="Properties/Manifest.addin.xml" Line="2" Column="17" />
+      <File FileName="Properties/AssemblyInfo.cs" Line="1" Column="1" />
+      <File FileName="Properties/AddinInfo.cs" Line="1" Column="1" />
+      <File FileName="Templates/BindingController.xml" Line="19" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

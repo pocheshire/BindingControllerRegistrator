@@ -7,7 +7,7 @@
         <_Name>Empty BindingController</_Name>
         <_Category>General</_Category>
         <LanguageName>C#</LanguageName>
-        <_Description>Creates a new BindingController</_Description>
+        <_Description>Creates an empty binding controller</_Description>
     </TemplateConfiguration>
 
     <TemplateFiles>
@@ -18,7 +18,7 @@ namespace ${Namespace}
 {
     public class ${Name} : BindingController<VIEW, FRAME>
     {
-        public override void Bind()
+        protected override void Bind()
         {
             //TODO: implement
         }
